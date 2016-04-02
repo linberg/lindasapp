@@ -5,15 +5,18 @@
 <div class="product_titles">
 <table>
   <thead>
-    <tr>
+    <tr><!--
       <th>Name&nbsp;</th>
       <th>Description&nbsp;</th>
       <th>Text&nbsp;</th>
-      <th>URL&nbsp; </th>
-      <th colspan="3"></th>
+      <th>URL&nbsp;</th>
+      <th>Color&nbsp;</th>
+      <th colspan="3"></th>-->
     </tr>
   </thead>
 </div><!--end div class product_titles-->
+
+<!--begin table
 
   <tbody>
     <% @products.each do |product| %>
@@ -22,6 +25,7 @@
         <td><%= product.description %></td>
         <td><%= product.text %></td>
         <td><%= product.image_url %></td>
+        <td><%= product.color %></td>
         <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
         <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Bist du sicher?' } %></td>
@@ -29,6 +33,23 @@
     <% end %>
   </tbody>
 </table>
+
+end table-->
+<div class="container">
+  <div class="row">
+    <% @products.each do |product| %>
+      <div class="col-sm-2 col-md-4">
+        <%= image_tag(product.image_url, class: "img-responsive") %>
+        <strong><%= product.name %></strong><br>
+        <%= product.description %><br>
+        <strong>$ <%= product.price %></strong><br>
+        <%= link_to 'Show', product %>
+        <%= link_to 'Edit', edit_product_path(product) %>
+        <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Bist du sicher?' } %>
+      </div> <!-- /col -->
+    <% end %>
+  </div> <!--end div class row-->
+</div> <!--end div class container-->
 
 <br>
 
