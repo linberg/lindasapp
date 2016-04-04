@@ -23,6 +23,8 @@ h1, h2, h3 {
   width: 100%;
   text-align: center;
   display: inline-block;
+  margin-bottom: 0px;
+  position: absolute;
 }
 
 .navbar-nav>li {
@@ -35,7 +37,7 @@ h1, h2, h3 {
   min-height: 100px;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -50px;
+  margin: 0 auto;
 }
 
 footer {
