@@ -1,6 +1,23 @@
-<div class="contact" id="contact"><h1>Contact</h1>
-  <p>If you'd like to get in touch, I'd be happy to hear from you!</p>
-  <p><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;<a href="mailto:linda@linda.com">linda@linda.com</a></p>
-  <p><span class="glyphicon glyphicon-phone-alt"></span>&nbsp;&nbsp;00 49 123 45 67 89</p>
-  <p><span class="glyphicon glyphicon-map-marker"></span>&nbsp;&nbsp;Friedrichshain, Berlin.</p>
+<div class="contact" id="contact"><h1>Contact us</h1>
+
+<%= flash[:notice] %>
+
+<%= form_tag("/static_pages/thank_you/") do %>
+<div class="row">
+  <div class="col-md-4">
+    <div class="form-group">
+      <%= label_tag :name, "Name" %>
+      <%= text_field_tag :name, nil, class: "form-control", placeholder: "Enter Name" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :email, "Email Address" %>
+      <%= text_field_tag :email, nil, class: "form-control", placeholder: "Enter Email" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :message, "Message" %>
+      <%= text_area_tag :message, nil, class: "form-control", placeholder: "Enter Message" %>
+    </div>
+  </div>
 </div>
+<%= submit_tag "Send" %>
+<% end %>
