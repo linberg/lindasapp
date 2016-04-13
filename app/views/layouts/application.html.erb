@@ -21,6 +21,17 @@
       <li><a href="/static_pages/about"> About&nbsp;</a></li>
       <li><a href="/static_pages/contact"> Contact&nbsp;</a></li>
       <li><a href="/products"> Products&nbsp;</a></li>
+      <li>
+          <%= form_for(@products) do |f| %>
+          <%= f.label :description %>
+          <%= f.text_field :Search %>
+          <%= f.submit %>
+          <% end %>
+          <!-- <%= form_tag("/products", method: "get") do %>
+            <%= text_field_tag :q, nil, placeholder: "Search", size: 20 %>
+            <%= submit_tag("Go!", class: "submit_tag") %>
+          <% end %> -->
+      </li>
 
     </ul>
   </nav>
