@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+  Rails.application.routes.draw do
   resources :products
   get 'static_pages/about'
 
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-
+  post 'static_pages/thank_you'
   # Example resource route with options:
   #   resources :products do
   #     member do
