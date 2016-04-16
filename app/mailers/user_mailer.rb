@@ -1,4 +1,4 @@
-class UserMailer < ApplicationMailer
+class UserMailer < ActionMailer
   default from: "alexwen35@gmail.com"
 
   def contact_form(email, name, message)
