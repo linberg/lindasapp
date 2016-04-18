@@ -64,6 +64,9 @@
       <%= text_field_tag :price, nil, class: "form-control", placeholder: "Price" %>
     </div>
     <div class="actions">
-      <%= submit_tag "Submit" %>
+      <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+        <%= content_tag(:strong, 'Submit') %>
+      <% end %>
     </div>
 <% end %>
+</div>
