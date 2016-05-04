@@ -30,19 +30,18 @@
             <span class="glyphicon glyphicon-search"></span>
             <% end %>
           <% end %>
+          <ul class="nav pull-right">
+            <li><div class="login_button">
+            <% if user_signed_in? %>
+              <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+            <% else %>
+              <%= link_to('Login', new_user_session_path) %>
+            <% end %>
+          </div><!--/login_button-->
+            </li>
+          </ul>
         </div>
       </li>
-
-    <ul class="nav pull-right">
-      <li><div class="login_button">
-      <% if user_signed_in? %>
-        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-      <% else %>
-        <%= link_to('Login', new_user_session_path) %>
-      <% end %>
-    </div><!--/login_button-->
-      </li>
-    </ul>
     </ul>
   </nav>
 
