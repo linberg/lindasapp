@@ -26,9 +26,9 @@
           <%= form_tag("/products", method: "get") do %>
             <%= text_field_tag :q, nil, class: "form-control", placeholder: "Search", size: 20 %>
             <%= submit_tag "Go!" %>
-            <%= link_to("/products", method: "get", class: "btn btn-default") do %>
+          <!--  <%= link_to("/products", method: "get", class: "btn btn-default") do %>
             <span class="glyphicon glyphicon-search"></span>
-            <% end %>
+            <% end %> -->
           <% end %>
           <ul class="nav pull-right">
             <li><div class="login_button">
