@@ -27,7 +27,6 @@ require 'devise'
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
-  config.include Devise::TestHelpers, :type => :controller
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
@@ -42,7 +41,7 @@ RSpec.configure do |config|
   #
   # You can disable this behaviour by removing the line below, and instead
   # explicitly tag your specs with their type, e.g.:
-  #
+  config.include Devise::TestHelpers, :type => :controller
   #     RSpec.describe UsersController, :type => :controller do
   #       # ...
   #     end

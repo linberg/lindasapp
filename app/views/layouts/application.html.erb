@@ -23,13 +23,14 @@
       <li><a href="/products"> Products&nbsp;</a></li>
       <li>
         <div class="search_box form-group has-feedback">
+
           <%= form_tag("/products", method: "get") do %>
             <%= text_field_tag :q, nil, class: "form-control", placeholder: "Search", size: 20 %>
-            <%= submit_tag("Go!", class: "submit_tag") %>
-          <!--  <%= link_to("/products", method: "get", class: "btn btn-default") do %>
-            <span class="glyphicon glyphicon-search"></span>
-            <% end %> -->
-          <% end %>
+            <%= submit_tag("Search") %>
+            <!--<%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+            <span class="glyphicon glyphicon-search"></span> -->
+            <% end %>
+            <% end %>          
           <ul class="nav pull-right">
             <li><div class="login_button">
             <% if user_signed_in? %>
