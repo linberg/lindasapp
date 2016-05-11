@@ -5,18 +5,18 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     if params[:q]
-     search_term = params[:q]
-     @products = Product.where("name LIKE ?", "%#{search_term}%")
-      #return our filtered list here
+      search_term = params[:q]
+      @products = Product.where("name LIKE ?", "%#{search_term}%")
+      #return filtered list here
     else
-    @products = Product.all
+      @products = Product.all
     end
-    @products = Product.paginate(:page => params[:page], :per_page => 3)
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
+    @products = Product.paginate(:page => params[:page], :per_page => 3)
     @comments = @product.comments.order("created_at DESC").paginate(:page => params[:page], :per_page => 2)
   end
 
