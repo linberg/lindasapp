@@ -21,6 +21,14 @@
       <li><a href="/static_pages/about"> About&nbsp;</a></li>
       <li><a href="/static_pages/contact"> Contact&nbsp;</a></li>
       <li><a href="/products"> Products&nbsp;</a></li>
+      <li><div class="login_button">
+        <% if user_signed_in? %>
+          <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+        <% else %>
+          <%= link_to('Login', new_user_session_path) %>
+        <% end %>
+      </div><!--/login_button-->
+      </li>
       <li>
     <!--    <div class="search_box">
           <%= form_tag("/products", method: "get") do %>
@@ -40,18 +48,6 @@
                   </div>
             <% end %>
           </div>
-
-
-          <ul class="nav pull-right">
-            <li><div class="login_button">
-            <% if user_signed_in? %>
-              <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-            <% else %>
-              <%= link_to('Login', new_user_session_path) %>
-            <% end %>
-          </div><!--/login_button-->
-            </li>
-          </ul>
       </li>
     </ul>
   </nav>
