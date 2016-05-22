@@ -10,6 +10,9 @@
 <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
   <em><%= @product.description %></em>
 </p>
+  <%= form_tag "/payments/create" do %>
+    <%= render partial: "shared/stripe_checkout_button" %>
+  <% end %>
   </div><!--end img_show_group-->
 
 <div class="col-xs-6 col-md-3 product_show">
