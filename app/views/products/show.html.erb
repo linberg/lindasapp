@@ -3,15 +3,20 @@
   <strong><h4><%= @product.name %></h4></strong>
   </p>
 
-  <p>$ <%= @product.price %></p>
+  <p>&euro; <%= @product.price %></p>
 
   <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div></p>
 
 <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
   <em><%= @product.description %></em>
 </p>
+  <% if user_signed_in? %>
   <%= form_tag "/payments/create" do %>
     <%= render partial: "shared/stripe_checkout_button" %>
+    <%= hidden_field_tag(:product_id, @product.id)%>
+  <% end %>
+  <% else %>
+  <%= link_to "<button class='btn btn-primary'>Sign up to purchase</button>".html_safe, new_user_registration_path %>
   <% end %>
   </div><!--end img_show_group-->
 

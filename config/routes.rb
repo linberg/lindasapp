@@ -1,10 +1,14 @@
   Rails.application.routes.draw do
   devise_for :users
+  resources :users
   resources :products do
     resources :comments
   end
+  resources :orders, only: [:index, :show, :create, :destroy]
+  resources :payments, only: [:create]
 
-  resources :users
+  post 'payments/create'
+
   get 'static_pages/about'
 
   get 'static_pages/contact'
@@ -65,5 +69,4 @@
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  resources :orders, only: [:index, :show, :create, :destroy]
 end
