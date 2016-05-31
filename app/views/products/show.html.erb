@@ -21,7 +21,10 @@
   </div><!--end img_show_group-->
 
 <div class="col-xs-6 col-md-3 product_show">
-  <img src="<%= @product.image_url %>" class="img-thumbnail">
+  <div class="thumbnail">
+  <%= image_tag(@product.image_url, width: "350", class: "img-zoom", data: {zoom_image: @product.image_url}) %>
+<!--  <img src="<%= @product.image_url %>" class="img-thumbnail"> -->
+  </div><!--end div thumbnail-->
 
 
 <% if signed_in? %>
