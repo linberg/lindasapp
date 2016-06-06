@@ -2,11 +2,11 @@
   <p>
   <strong><h4><%= @product.name %></h4></strong>
   </p>
-
+​
   <p>&euro; <%= @product.price %></p>
-
+​
   <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div></p>
-
+​
 <p><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
   <em><%= @product.description %></em>
 </p>
@@ -19,32 +19,15 @@
   <%= link_to "<button class='btn btn-primary'>Sign up to purchase</button>".html_safe, new_user_registration_path %>
   <% end %>
   </div><!--end img_show_group-->
-
+​
 <div class="col-xs-6 col-md-3 product_show">
   <div class="thumbnail">
   <%= image_tag(@product.image_url, width: "350", class: "img-zoom", data: {zoom_image: @product.image_url}) %>
 <!--  <img src="<%= @product.image_url %>" class="img-thumbnail"> -->
   </div><!--end div thumbnail-->
-
-
-<% if signed_in? %>
-  <h4>Add a review:</h4>
-  <%= form_for([@product, @product.comments.build]) do |f| %>
-    <p>
-      <%= f.label :body, "Comments" %><br>
-      <%= f.text_area :body, class: "form-control" %>
-    </p>
-    <p>
-      <div class="rating"></div>
-    </p>
-    <p>
-      <%= button_tag(type: 'submit', class: "btn btn-default") do %>
-        <%= content_tag(:strong, 'Submit') %>
-      <% end %>
-    </p>
-  <% end %>
-<% end %>
-
+​
+<%= render 'new_comment' %>
+​
 <div class="product-reviews">
   <% @comments.each do |comment| %>
     <div class="row">
@@ -61,5 +44,5 @@
   <%= link_to 'Edit', edit_product_path(@product) %> |
   <%= link_to 'Back', products_path %>
 </div>
-
+​
 </div><!--end product_show-->
