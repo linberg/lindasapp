@@ -1,4 +1,6 @@
-<!-- <input type="text" placeholder="Your name" ng-model="name"> -->
+<input type="text" placeholder="Your name" ng-model="name">
+{{name}}
+{{42 / 6 }}
 
 <div ng-controller="OrdersCtrl">
   <h1>Orders</h1>
@@ -34,7 +36,7 @@
       </td>
       <td>
         {{order.product.name}}
-        <small ng-show="order.user.email"><br>-{{order.user.email}}</small>
+        <small ng-show="order.user.email"><br>Ordered by: {{order.user.email}}</small>
       </td>
       <td>
         <button ng-click="deleteOrder(order)" class="btn btn-danger btn-sm">
