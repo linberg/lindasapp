@@ -1,4 +1,4 @@
-
+<% cache product do %>
 <div class="container">
   <div class="row">
     <% @products.each do |product| %>
@@ -12,6 +12,6 @@
         <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Bist du sicher?' } %>
       </div>
     <% end %>
-
+  <% end %>
   </div> <!--end div class row-->
 </div> <!--end div class container-->

@@ -36,7 +36,8 @@
   </tbody>
 </table> -->
 
-
+<% cache(cache_key_for_products) do %>
+<%= render @products %>
 
 <div class="container">
   <div class="row">
@@ -55,6 +56,6 @@
     <% end %>
   </div> <!--end div class row -->
 </div> <!--end div class container-->
-
+<% end %>
 <br>
 <%= link_to 'New Product', new_product_path %>
