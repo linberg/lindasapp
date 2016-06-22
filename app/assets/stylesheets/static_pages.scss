@@ -9,6 +9,7 @@ html {
 
 body {
   margin-bottom: 50px;
+  height: 100%;
 }
 
 h1, h2, h3 {
@@ -54,12 +55,6 @@ h1, h2, h3 {
 
 .featured_products {
   margin-bottom: 50px;
-}
-
-.about {
-  background: url(/assets/2.png);
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .contact {
