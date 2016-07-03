@@ -1,6 +1,11 @@
-<h1>Editing Product</h1>
+<h1><%= "Editing #{@product.name}" %></h1>
 
-<%= render 'form' %>
+<!--<%= render 'form' %>
 
 <%= link_to 'Show', @product %> |
-<%= link_to 'Back', products_path %>
+<%= link_to 'Back', products_path %>-->
+
+<%= form_for(@product, :url => {:action => 'update', :id => @product.id}) do |f| %>
+<%= render(:partial => "form", :locals => {:f => f}) %>
+<%= submit_tag("Update Subject") %>
+<% end %>

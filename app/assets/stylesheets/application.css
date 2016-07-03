@@ -13,24 +13,3 @@
  *= require_tree .
  *= require_self
  */
-.search_for, .text_field {
-  font-family: "Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
-  text-align: center;
-  font-weight: lighter;
-  font-size: 15px;
-  color: black;
-  padding-top: 17px;
-}
-
-.submit_tag {
-  font-size: 15px;
-  color: black;
-}
-
-.search_box {
-  padding-top: 5px;
-}
-
-.input-group {
-  display: inline-flex;
-}
