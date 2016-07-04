@@ -10,11 +10,11 @@
          </div>
          <div class="form-group">
             <%= label_tag :email, "Email Address" %>
-            <%= text_field_tag :email, nil, class: "form-control", placeholder: "Enter Email" %>
+            <%= text_field_tag :email, nil, class: "form-control", placeholder: "Enter Email", required: true %>
          </div>
          <div class="form-group">
             <%= label_tag :message, "Message" %>
-            <%= text_area_tag :message, nil, class: "form-control", placeholder: "Enter Message" %>
+            <%= text_area_tag :message, nil, class: "form-control", placeholder: "Enter Message", required: true %>
          </div>
          <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
          <%= content_tag(:strong, 'Send') %>

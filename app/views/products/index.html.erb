@@ -1,11 +1,9 @@
 <%= notice %>
 ​
-<h1>Listing Products</h1>
-
-<%= link_to 'Create Product', new_product_path, class: "btn btn-default" %>
+<h1>Listing Products<object align="right"><%= link_to 'Create Product', new_product_path, class: "btn btn-default" %></object></h1>
 
   <div class="product_titles">
-<% cache(cache_key_for_products) do %>
-  <%= render @products %>
-<% end %><p>
-  </div><!--end div class product_titles>
+    <% cache(cache_key_for_products) do %>
+      <%= render @products %>
+    <% end %>
+  </div><!--end div class product_titles-->
