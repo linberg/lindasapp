@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @products = Product.paginate(:page => params[:page], :per_page => 3)
-    @comments = @product.comments.order("created_at DESC").paginate(:page => params[:page], :per_page => 2)
+    @comments = @product.comments.order("created_at DESC").paginate(:page => params[:page], :per_page => 3)
   end
 
   # GET /products/new
@@ -29,8 +29,6 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
-    @product = Product.find(params[:id])
-    @pagetitle = "Edit #{@product.name}"
   end
 
   # POST /products
@@ -52,16 +50,16 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
   def update
-    respond_to do |format|
-      if @product.update(product_params)
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
-        format.json { render :show, status: :ok, location: @product }
-      else
-        format.html { render :edit }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        if @product.update(product_params)
+          format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+          format.json { render :show, status: :ok, location: @product }
+        else
+          format.html { render :edit }
+          format.json { render json: @product.errors, status: :unprocessable_entity }
+        end
       end
     end
-  end
 
   # DELETE /products/1
   # DELETE /products/1.json

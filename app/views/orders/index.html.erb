@@ -35,9 +35,11 @@
         <small ng-show="order.user.email"><br>Ordered by: {{order.user.email}}</small>
       </td>
       <td>
+        <% if signed_in? && current_user.admin? %>
         <button ng-click="deleteOrder(order)" class="btn btn-danger btn-sm">
           <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
         </button>
+        <% end %>
       </td>
 
     </tr>
