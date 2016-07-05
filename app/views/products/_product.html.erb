@@ -1,7 +1,6 @@
 <% cache product do %>
 <div class="container">
   <div class="row">
-    <% @products.each do |product| %>
       <div class="col-sm-2 col-md-4">
         <%= image_tag(product.image_url, class: "img-responsive") %>
         <strong><%= product.name %></strong><br>
@@ -9,9 +8,10 @@
         <strong>&euro;<%= product.price %></strong><br>
         <%= link_to 'Show', product %>
         <%= link_to 'Edit', edit_product_path(product) %>
+        <% if signed_in? && current_user.admin? %>
         <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Bist du sicher?' } %>
+        <% end %>
       </div>
-    <% end %>
   <% end %>
   </div> <!--end div class row-->
 </div> <!--end div class container-->
