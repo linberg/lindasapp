@@ -1,5 +1,4 @@
 class Product < ActiveRecord::Base
-  validates :name, :image_url, :price, presence: true
   has_many :orders
   has_many :comments
 
