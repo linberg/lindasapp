@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     #@products = Product.paginate(:page => params[:page], :per_page => 3)
-    @comments = @product.comments.order("created_at DESC").paginate(:page => params[:page], :per_page => 2)
+    @comments = @product.comments.order("created_at DESC").paginate(:page => params[:page], :per_page => 3)
   end
 
   # GET /products/new
@@ -79,6 +79,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.permit(:name, :description, :text, :image_url, :color, :price)
+      params.permit(:name, :image_url, :price)
     end
 end
