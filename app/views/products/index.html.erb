@@ -1,8 +1,7 @@
 
-<h1>Listing Products</h1>
+<h1>Listing Products <object align="right"><%= link_to 'New Product', new_product_path, class: "btn btn-default" %></object></h1>
 
 <% cache(cache_key_for_products) do %>
   <%= render @products %>
 <% end %>
 <br>
-<%= link_to 'New Product', new_product_path, class: "btn btn-default" %>
