@@ -1,11 +1,13 @@
 <% cache product do %>
-      <div class="col-sm-2 col-md-4">
+      <div class="col-sm-2 col-md-4 product_titles">
         <%= image_tag(product.image_url, class: "img-responsive") %>
         <strong><%= product.name %></strong><br>
         <%= product.description %><br>
         <strong>&euro;<%= product.price %></strong><br>
         <%= link_to 'Show', product, class: "btn btn-default" %>
+        <% if signed_in? %>
         <%= link_to 'Edit', edit_product_path(product), class: "btn btn-default" %>
+        <% end %>
         <% if signed_in? && current_user.admin? %>
         <%= link_to 'Destroy', product, class: "btn btn-danger", method: :delete, data: { confirm: 'Bist du sicher?' } %>
         <% end %>
