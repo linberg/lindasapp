@@ -17,5 +17,11 @@ class StaticPagesController < ApplicationController
     #  :subject => "A new contact form message from #{@name}",
     #  :body => @message).deliver_now
   end
+
+  def order_confirmation
+    @name = params[:name]
+    @order = params[:order]
+    UserMailer.order_confirmation(@name, @order).deliver_now
+  end
   
 end
