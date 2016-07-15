@@ -1,7 +1,7 @@
 <div class="col-xs-6 col-md-9 img_show_group">
+  <% cache @product do %>
   <p>
-    <% cache @product do %>
-  <strong><h4><%= @product.name %></h4></strong>
+    <strong><h4><%= @product.name %></h4></strong>
   </p>
 ​
   <p>&euro; <%= @product.price %></p>
@@ -27,7 +27,7 @@
 ​
 <div class="col-xs-6 col-md-3 product_show">
   <div class="thumbnail">
-  <%= image_tag(@product.image_url, width: "350", class: "img-zoom", data: {zoom_image: @product.image_url}) %>
+  <%= image_tag(asset_path(@product.image_url), width: "350", class: "img-zoom", data: {zoom_image: asset_path(@product.image_url)}) %>
 <!--  <img src="<%= @product.image_url %>" class="img-thumbnail"> -->
   </div><!--end div thumbnail-->
 ​
@@ -36,5 +36,3 @@
 <%= render 'comments' %>
   <%= will_paginate @comments %>
 </div>
-​
-</div><!--end product_show-->

@@ -10,7 +10,6 @@
     </select>
 
     <input type="number" step="0.01" class="form-control" placeholder="Total" ng-model="newOrder.total">
-    <input type="number" class="form-control" placeholder="Order ID" ng-model="newOrder.product_id">
 
     <input type="submit" value="+" class="btn btn-success">
   </form>
@@ -32,7 +31,7 @@
       </td>
       <td>
         {{order.product.name}}
-        <small ng-show="order.user.email"><br>Ordered by: {{order.user.email}}</small>
+        <small ng-show="order.user_id"><br>Ordered by: {{order.user.email}}; User ID:{{order.user_id}}</small>
       </td>
       <td><% if signed_in? && current_user.admin? %>
         <button ng-click="deleteOrder(order)" class="btn btn-danger btn-sm">
