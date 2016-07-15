@@ -9,7 +9,7 @@ var app = angular.module('shop', ['ngResource']);
     var products_model = $resource("/products/:id.json", {id: "@id"});
       var x = {
         orders: orders_model,
-        products: products_model,
+        products: products_model
         };
       return x;
   }]);
